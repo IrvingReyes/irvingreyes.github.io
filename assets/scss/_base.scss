@@ -1,0 +1,80 @@
+:root {
+  --c-navy-900: #{$navy-900};
+  --c-navy-700: #{$navy-700};
+  --c-slate: #{$slate};
+  --c-orange: #{$orange};
+  --c-white: #{$white};
+  --nav-h: #{$nav-h};
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $nav-h;
+}
+
+body {
+  font-family: $font-base;
+  color: $navy-900;
+  background: $white;
+  padding-top: $nav-h;
+  overflow-x: hidden;
+}
+
+.text-orange { color: $orange !important; }
+
+// Buttons
+.btn-brand,
+.btn-brand-outline {
+  --bs-btn-padding-x: 2rem;
+  --bs-btn-padding-y: .9rem;
+  font-weight: 600;
+  border-radius: .75rem;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+
+  &:hover { transform: translateY(-2px); }
+}
+
+.btn-brand {
+  background: $navy-900;
+  color: $white;
+  border: 2px solid $navy-900;
+  &:hover, &:focus-visible {
+    background: $navy-700;
+    border-color: $navy-700;
+    color: $white;
+    box-shadow: 0 10px 24px rgba($navy-900, .25);
+  }
+}
+
+.btn-brand-outline {
+  background: $orange;
+  color: $navy-900;
+  border: 2px solid $orange;
+  &:hover, &:focus-visible {
+    background: darken($orange, 6%);
+    border-color: darken($orange, 6%);
+    color: $navy-900;
+    box-shadow: 0 10px 24px rgba($orange, .4);
+  }
+}
+
+// Reveal-on-load animation
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: reveal .8s cubic-bezier(.2, .7, .2, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

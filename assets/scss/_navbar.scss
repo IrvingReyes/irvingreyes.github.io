@@ -1,0 +1,81 @@
+.site-nav {
+  height: $nav-h;
+  background: rgba($white, .96);
+  backdrop-filter: blur(10px);
+  transition: box-shadow .25s ease;
+
+  &.is-scrolled { box-shadow: 0 6px 24px rgba($navy-900, .08); }
+
+  .navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+
+    .brand-first { color: $orange; }
+    .brand-last  { color: $ink; }
+  }
+
+  .nav-link {
+    position: relative;
+    color: $navy-900;
+    font-weight: 500;
+    font-size: .95rem;
+    padding: .5rem .9rem !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: .9rem;
+      right: .9rem;
+      bottom: .15rem;
+      height: 2px;
+      background: $orange;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+
+    &:hover, &:focus-visible, &.active {
+      color: $navy-700;
+      &::after { transform: scaleX(1); }
+    }
+  }
+
+  .lang-toggle {
+    min-width: 3.25rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: $white;
+    background: $navy-900;
+    border: 2px solid $navy-900;
+    border-radius: .75rem;
+    padding: .45rem 1rem;
+    transition: background-color .2s ease, color .2s ease;
+
+    &:hover, &:focus-visible {
+      background: $orange;
+      border-color: $orange;
+      color: $navy-900;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    &:focus { box-shadow: 0 0 0 .2rem rgba($orange, .5); }
+  }
+
+  // Mobile dropdown panel
+  @include down($bp-lg) {
+    .navbar-collapse {
+      background: $white;
+      margin: 0 -.75rem;
+      padding: .5rem 1.25rem 1.25rem;
+      border-radius: 0 0 $radius-lg $radius-lg;
+      box-shadow: 0 16px 32px rgba($navy-900, .12);
+    }
+    .nav-link::after { right: auto; width: 2rem; }
+    .lang-toggle { margin-top: .75rem; }
+  }
+}

@@ -1,0 +1,660 @@
+// Placeholder sections (filled in later)
+.section {
+  padding: 6rem 0;
+
+  &:nth-of-type(even) { background: #F6F7FB; }
+
+  .section__eyebrow {
+    color: $orange;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: .85rem;
+  }
+
+  .section__title {
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    color: $navy-900;
+  }
+
+  .section__placeholder {
+    color: $slate;
+    border: 2px dashed rgba($slate, .3);
+    border-radius: $radius-lg;
+    padding: 2.5rem;
+    text-align: center;
+  }
+}
+
+.site-footer {
+  background: $navy-900;
+  border-top: 1px solid rgba($white, .1);
+  color: rgba($white, .8);
+  padding: 2rem 0;
+  font-size: .9rem;
+}
+
+// Side margins aligned with the hero text (hero padding + hero content padding)
+.page-gutter {
+  padding-inline: calc(#{$hero-gutter} + #{$content-gutter});
+}
+
+// Two equal columns: title left, content right
+.split {
+  // Stays pinned while the right column scrolls, until that column ends.
+  // Only on screens tall enough to fit the whole block (title + logos).
+  .split__head {
+    @media (min-width: $bp-lg) and (min-height: 700px) {
+      position: sticky;
+      top: calc(#{$nav-h} + 2rem);
+    }
+  }
+
+  .split__title {
+    font-weight: 800;
+    font-size: clamp(2rem, 3.6vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: $ink;
+    margin-bottom: 1.25rem;
+  }
+
+  .split__subtitle {
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    color: $orange;
+    margin: 0;
+  }
+
+  // Bigger, centered quote (My Journey)
+  .split__subtitle--feature {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.45;
+  }
+
+  .split__body p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: $slate;
+    margin-bottom: 1.5rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+// Technology logos: equal tiles, logos of any aspect ratio fit inside
+.tech-logos {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+
+  @include up($bp-md) { gap: 1rem; }
+}
+
+.tech-logos__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: $white; // also hides logos that ship with a white background (Azure)
+  border: 1px solid rgba($slate, .12);
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba($navy-900, .06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  @include up($bp-md) { aspect-ratio: 4 / 3; }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($orange, .6);
+    box-shadow: 0 12px 24px rgba($navy-900, .12);
+  }
+
+  // Common "safe area": wide logos are limited by width, square ones by height
+  img {
+    width: 78%;
+    height: 62%;
+    object-fit: contain;
+  }
+
+  // For logo files that ship with a lot of transparent padding (e.g. Claude)
+  &--padded img { transform: scale(1.3); }
+}
+
+// Simple CSS tooltip: add data-tooltip="Text" to any element.
+// (Goes on the tile, not the <img>: images can't have ::before/::after.)
+[data-tooltip] {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 4px);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  // Bubble
+  &::after {
+    content: attr(data-tooltip);
+    bottom: calc(100% + 10px);
+    padding: .4rem .75rem;
+    border-radius: .5rem;
+    background: $navy-900;
+    color: $white;
+    font-size: .8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba($navy-900, .25);
+  }
+
+  // Arrow
+  &::before {
+    content: '';
+    bottom: calc(100% + 4px);
+    border: 6px solid transparent;
+    border-bottom: 0;
+    border-top-color: $navy-900;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+// ============================================================
+//  Contact – dark theme: navy background, white text, orange accents
+// ============================================================
+.contact {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  color: $white;
+  background:
+    radial-gradient(ellipse 50% 60% at 85% 15%, rgba($slate, .55) 0%, rgba($slate, 0) 70%),
+    linear-gradient(160deg, $navy-900 0%, $navy-900 45%, $navy-700 80%, $slate 130%);
+}
+
+.contact__orbits {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  circle { fill: none; stroke: rgba($white, .08); stroke-width: 1.2; }
+}
+
+.contact__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: $orange;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background: $orange;
+    border-radius: 2px;
+  }
+}
+
+.contact__title {
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-bottom: 1.25rem;
+}
+
+.contact__text {
+  color: rgba($white, .78);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 34rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba($orange, .45);
+  background: rgba($orange, .1);
+  color: $orange;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.contact__dot {
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: $orange;
+  box-shadow: 0 0 0 0 rgba($orange, .7);
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+@keyframes pulse-dot {
+  70%  { box-shadow: 0 0 0 .6rem rgba($orange, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($orange, 0); }
+}
+
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: $radius-lg;
+  background: rgba($white, .06);
+  border: 1px solid rgba($white, .12);
+  color: $white;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform .25s ease, background-color .25s ease, border-color .25s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    transform: translateX(6px);
+    background: rgba($white, .1);
+    border-color: rgba($orange, .6);
+
+    .contact-card__arrow { color: $orange; transform: translateX(3px); }
+  }
+}
+
+.contact-card__icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .9rem;
+  background: $orange;
+
+  svg { width: 1.35rem; height: 1.35rem; fill: $navy-900; }
+}
+
+.contact-card__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // lets long values wrap instead of overflowing
+}
+
+.contact-card__label {
+  color: $orange;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.contact-card__value {
+  font-weight: 600;
+  font-size: clamp(.95rem, 1.4vw, 1.1rem);
+  overflow-wrap: anywhere;
+}
+
+.contact-card__arrow {
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: rgba($white, .5);
+  transition: color .25s ease, transform .25s ease;
+}
+
+// ============================================================
+//  Timeline (My Journey)
+// ============================================================
+$tl-gap: 2.5rem;   // space between rail and content
+$tl-dot: 1.1rem;
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 $tl-gap;
+  position: relative;
+
+  // Rail: orange fading into navy
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(#{$tl-dot} / 2 - 1px);
+    top: .4rem;
+    bottom: .4rem;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, $orange 0%, $navy-700 85%, $navy-900 100%);
+  }
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 2.5rem;
+
+  &:last-child { padding-bottom: 0; }
+
+  // Dot
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(-#{$tl-gap});
+    top: .3rem;
+    width: $tl-dot;
+    height: $tl-dot;
+    border-radius: 50%;
+    background: $white;
+    border: 3px solid $orange;
+    transition: background-color .25s ease, transform .25s ease;
+  }
+
+  &:hover::before {
+    background: $orange;
+    transform: scale(1.15);
+  }
+}
+
+.timeline__year {
+  display: inline-block;
+  padding: .25rem .75rem;
+  margin-bottom: .6rem;
+  border-radius: 999px;
+  background: rgba($orange, .16);
+  color: $navy-900;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .05em;
+}
+
+.timeline__title {
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.35;
+  color: $navy-900;
+  margin-bottom: .4rem;
+}
+
+.timeline__org {
+  display: block;
+  margin-top: .2rem;
+  font-weight: 500;
+  font-size: .95rem;
+  color: $orange;
+}
+
+.timeline__desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: $slate;
+  margin: 0;
+}
+
+// "Today": highlighted navy card
+.timeline__item--now {
+  padding: 1.5rem 1.75rem;
+  margin-left: -.25rem;
+  border-radius: $radius-lg;
+  background: $grad-navy;
+  box-shadow: 0 16px 36px rgba($navy-900, .22);
+
+  &::before {
+    left: calc(-#{$tl-gap} + .25rem);
+    top: 1.8rem;
+    background: $orange;
+    border-color: $orange;
+    box-shadow: 0 0 0 0 rgba($orange, .7);
+    animation: pulse-dot 2s ease-out infinite;
+  }
+
+  .timeline__year  { background: $orange; color: $navy-900; }
+  .timeline__title { color: $white; }
+  .timeline__desc  { color: rgba($white, .8); }
+}
+
+// ============================================================
+//  Real World Solutions – project cards (bento grid)
+// ============================================================
+.projects__heading {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 1.6vw, 1.5rem);
+}
+
+.project-card {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 2.2vw, 2rem);
+  background: $white;
+  border: 1px solid rgba($slate, .12);
+  border-radius: $radius-lg;
+  box-shadow: 0 4px 14px rgba($navy-900, .05);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($orange, .6);
+    box-shadow: 0 16px 32px rgba($navy-900, .1);
+  }
+
+  // Big stories: 2 per row from lg. Compact ones: 2 per row on md, 4 on xl.
+  &--lg { @include up($bp-lg) { grid-column: span 6; } }
+  &--sm {
+    @include up($bp-md) { grid-column: span 6; }
+    @include up($bp-xl) { grid-column: span 3; }
+  }
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.project-card__icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .9rem;
+  background: $grad-navy;
+
+  svg { width: 1.35rem; height: 1.35rem; fill: $orange; }
+}
+
+.project-card__cat {
+  display: block;
+  color: $orange;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+
+.project-card__title {
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.3;
+  color: $navy-900;
+  margin: 0;
+}
+
+.project-card__body {
+  font-size: .98rem;
+  line-height: 1.8;
+  color: $slate;
+  margin-bottom: 1.25rem;
+}
+
+.project-card__tags {
+  list-style: none;
+  margin: auto 0 0; // pins tags to the bottom so cards in a row line up
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+
+  li {
+    padding: .25rem .7rem;
+    border-radius: 999px;
+    background: rgba($orange, .14);
+    color: $navy-900;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+}
+
+// ============================================================
+//  Portfolio – private showcase invitation
+// ============================================================
+.showcase {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border-radius: $radius-xl;
+  color: $white;
+  background:
+    radial-gradient(ellipse 45% 70% at 90% 10%, rgba($orange, .22) 0%, rgba($orange, 0) 70%),
+    $grad-navy;
+  box-shadow: 0 24px 48px rgba($navy-900, .18);
+
+  @include down($bp-md) { border-radius: 2rem; }
+}
+
+.showcase__title {
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin-bottom: 1.25rem;
+}
+
+.showcase__text {
+  color: rgba($white, .8);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 38rem;
+  margin-bottom: 2rem;
+}
+
+.showcase__note {
+  color: rgba($white, .6);
+  font-size: .9rem;
+}
+
+// Decorative "private" browser window
+.showcase__window {
+  max-width: 420px;
+  margin-inline: auto;
+  border-radius: $radius-lg;
+  background: rgba($white, .08);
+  border: 1px solid rgba($white, .16);
+  box-shadow: 0 20px 40px rgba($navy-900, .35);
+  transform: rotate(-3deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+.showcase__bar {
+  display: flex;
+  gap: .4rem;
+  padding: .8rem 1rem;
+  border-bottom: 1px solid rgba($white, .12);
+
+  i {
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background: rgba($white, .3);
+    &:first-child { background: $orange; }
+  }
+}
+
+.showcase__screen {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.showcase__blur {
+  display: grid;
+  gap: .7rem;
+  filter: blur(3px);
+  opacity: .7;
+
+  .sk {
+    height: .7rem;
+    border-radius: 999px;
+    background: rgba($white, .35);
+
+    &--title { height: 1.1rem; width: 60%; background: rgba($orange, .7); }
+    &--short { width: 70%; }
+  }
+
+  .sk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .6rem;
+    margin: .4rem 0;
+
+    span {
+      aspect-ratio: 4 / 3;
+      border-radius: .6rem;
+      background: rgba($white, .2);
+    }
+  }
+}
+
+.showcase__lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: $orange;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 .6rem rgba($orange, .2), 0 12px 28px rgba($navy-900, .4);
+
+  svg { width: 1.9rem; height: 1.9rem; fill: $navy-900; }
+}

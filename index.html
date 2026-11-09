@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Irving Reyes | Odoo Developer</title>
+  <meta name="description" content="Irving Reyes – Revealing the true power of Odoo.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 (CDN). To self-host, drop the file in assets/vendor/bootstrap/ and
+       replace with: <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css"> -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top site-nav">
+    <div class="container-fluid px-3 px-lg-5">
+      <a class="navbar-brand" href="#home" aria-label="Irving Reyes – home">
+        <span class="brand-first">Irving</span><span class="brand-last">Reyes</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#research"  data-i18n="nav.research">Research and Studies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#journey"   data-i18n="nav.journey">My Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solutions" data-i18n="nav.solutions">Real World Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"   data-i18n="nav.contact">Contact Me</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="langToggle" class="btn lang-toggle" type="button" aria-label="Ver en español">ES</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== JUMBOTRON ===================== -->
+    <section id="home" class="hero">
+      <div class="hero__stage">
+        <div class="hero__card">
+
+          
+          <!-- Background image: assets/img/hero-bg.jpg (set in assets/scss/_hero.scss) -->
+          <div class="hero__bg"></div>
+
+          <svg class="hero__orbits" viewBox="0 0 1440 780" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="orbit" d="M480 780 C 700 520, 950 380, 1250 360"/>
+            <path class="orbit" d="M560 780 C 760 560, 1000 430, 1300 420"/>
+            <path class="orbit" d="M1150 400 C 1320 470, 1380 620, 1340 780"/>
+            <path class="orbit" d="M1180 360 C 1400 440, 1460 640, 1420 780"/>
+            <circle class="dot" cx="760" cy="540" r="8"/>
+            <circle class="dot" cx="1290" cy="415" r="6"/>
+          </svg>
+
+          <div class="hero__content">
+            <p class="hero__eyebrow reveal" data-i18n="hero.eyebrow">My Mission:</p>
+            <h2 class="hero__title reveal" style="--d:.15s" data-i18n="hero.title">
+              Revealing the <span class="accent">TRUE</span><br>power of <span class="accent">Odoo</span><br>and <span class="accent">AI</span>
+            </h2>
+          </div>
+
+          <!-- Decorative glass cards -->
+          <div class="glass-card glass-card--chart" style="--d:.4s" aria-hidden="true">
+            <div class="glass-card__label">
+              <svg width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0a8 8 0 1 0 8 8H8z"/><path fill="currentColor" opacity=".6" d="M9 0v7h7a7 7 0 0 0-7-7z"/></svg>
+              <span data-i18n="hero.card1">Efficiency</span>
+            </div>
+            <svg viewBox="0 0 220 100" width="100%">
+              <g stroke="rgba(255,255,255,.35)" stroke-width="1">
+                <path d="M0 20H220M0 45H220M0 70H220M0 95H220M45 0V100M90 0V100M135 0V100M180 0V100"/>
+              </g>
+              <path fill="#F2A249" opacity=".85" d="M0 95 L20 80 L45 85 L70 70 L90 74 L115 55 L135 62 L160 40 L185 45 L210 18 L220 22 V100 H0Z"/>
+              <circle cx="90" cy="74" r="3.5" fill="#fff"/><circle cx="210" cy="18" r="3.5" fill="#fff"/>
+            </svg>
+          </div>
+
+          <div class="glass-card glass-card--pulse" style="--d:.55s" aria-hidden="true">
+            <div class="glass-card__label">
+              <svg width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M9.5 0 3 9h4l-1 7 7-10H9z"/></svg>
+              <span data-i18n="hero.card2">Automation</span>
+            </div>
+            <svg viewBox="0 0 200 50" width="100%">
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" d="M0 40 H40 L50 30 L58 42 L70 8 L80 44 L92 35 L110 38 L122 12 L132 44 L145 36 H200"/>
+            </svg>
+          </div>
+
+          <!-- Wavy bottom with orange band -->
+          <svg class="hero__wave" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="waveOrange" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#F7B955"/>
+                <stop offset="1" stop-color="#F2A249"/>
+              </linearGradient>
+            </defs>
+            <path class="wave-orange" d="M0 80 C 260 175, 560 185, 860 100 C 1060 45, 1260 50, 1440 150 V220 H0 Z"/>
+          </svg>
+        </div>
+
+        <svg class="hero__wave hero__wave--cover" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+          <path class="wave-white" d="M0 125 C 260 210, 560 210, 860 118 C 1060 62, 1270 95, 1440 220 H0 Z"/>
+        </svg>
+
+        <!-- Transparent PNG of you goes here (no border, no background).
+             Replace src with: assets/img/hero-portrait.png -->
+        <div class="hero__figure reveal" style="--d:.3s">
+          <img src="assets/img/portrait.png" alt="Irving Reyes" width="600" height="800">
+        </div>
+      </div>
+
+      <div class="hero__below">
+        <h1 class="hero__name reveal" style="--d:.45s">Irving Daniel <span class="text-orange">Reyes Elizondo</span></h1>
+        <div class="hero__intro reveal" style="--d:.55s">
+          <p data-i18n="hero.p1">I'm a <strong>fullstack developer specializing in Odoo</strong>, with over three years of experience at Vauxoo, where I built custom modules, migrated entire repositories across versions, modernized interfaces to OWL, and resolved hundreds of production issues for a range of clients.</p>
+          <p data-i18n="hero.p2">I combine technical work (Python, PostgreSQL, Docker, performance optimization, APIs, and automated testing) with a solid understanding of business processes, backed by my <strong>Odoo 19 Functional Certification</strong> and a diploma in business accounting.</p>
+          <p data-i18n="hero.p3">I hold a bachelor's degree in Networking and Computer Services from Universidad Veracruzana, with prior experience in server administration, security, and infrastructure deployment, and I'm comfortable working with clients in both Spanish and English, from requirements gathering through delivery. I'm currently looking for a role where I can <strong>combine development and functional consulting on ERP projects</strong>.</p>
+        </div>
+        <div class="d-flex flex-wrap gap-3 reveal" style="--d:.65s">
+          <a href="#portfolio" class="btn btn-brand" data-i18n="hero.cta1">View my work</a>
+          <a href="#contact" class="btn btn-brand-outline" data-i18n="hero.cta2">Let's talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLACEHOLDER SECTIONS ===================== -->
+    <section id="research" class="section split">
+      <div class="page-gutter">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-6">
+            <div class="split__head">
+              <h2 class="split__title" data-i18n="research.title">Understanding the system as a whole</h2>
+              <p class="split__subtitle" data-i18n="research.subtitle">«The whole is greater than the sum of its parts.»</p>
+
+              <ul class="tech-logos" aria-label="Technologies">
+                <li class="tech-logos__item" data-tooltip="Odoo"><img src="assets/img/odoologo.webp" alt="Odoo" width="348" height="111" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="OWL JS"><img src="assets/img/owllogo.webp" alt="OWL JS" width="366" height="216" loading="lazy"></li>
+                <li class="tech-logos__item tech-logos__item--padded" data-tooltip="Claude"><img src="assets/img/claudelogo.webp" alt="Claude" width="382" height="118" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="Python"><img src="assets/img/pythonlogo.webp" alt="Python" width="1036" height="996" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="PostgreSQL"><img src="assets/img/postgresqllogo.webp" alt="PostgreSQL" width="717" height="706" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="Microsoft Azure"><img src="assets/img/azurelogo.webp" alt="Microsoft Azure" width="4302" height="1320" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="Cisco"><img src="assets/img/ciscologo.webp" alt="Cisco" width="1356" height="792" loading="lazy"></li>
+                <li class="tech-logos__item" data-tooltip="Cybersecurity" data-i18n-tooltip="tech.cybersecurity"><img src="assets/img/cybersecuritylogo.webp" alt="Cybersecurity" width="268" height="292" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="split__body">
+              <p data-i18n="research.p1">I started in networks, servers, and databases, then moved into the cloud, DevOps, and software development. Along the way I realized that good solutions don’t live in a single layer: they depend on how every part works together.</p>
+              <p data-i18n="research.p2">That’s why I’ve always tried to understand the full picture: the business requirements, the infrastructure that runs the software, security and data integrity, the connections between systems, and the design of the solution itself.</p>
+              <p data-i18n="research.p3">In practice, I take ownership and accountability of projects end to end: from tuning PostgreSQL queries and deploying with containers and Odoo.sh, to building custom Odoo modules and modern OWL interfaces that solve real business problems.</p>
+              <p data-i18n="research.p4">AI has been a force multiplier across all of these skills, helping me research, build, document, and automate faster without losing sight of the bigger picture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section split">
+      <div class="page-gutter">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-6">
+            <div class="split__head">
+              <h2 class="split__title" data-i18n="journey.heading">From VPS administration to ERP and Odoo</h2>
+              <p class="split__subtitle split__subtitle--feature" data-i18n="journey.subtitle">«I turn complex requirements and data into solutions people can use.»</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__year">2021</span>
+                <h3 class="timeline__title"><span data-i18n="journey.1.title">IT Technician</span>
+                  <span class="timeline__org" data-i18n="journey.1.org">Kiki’s Adventures / Erudite (remote)</span></h3>
+                <p class="timeline__desc" data-i18n="journey.1.desc">Managed cPanel/WHM and VPS resources for multiple clients, deployed WordPress sites, hardened security, and set up automated backups and email authentication (SPF, DKIM, DMARC).</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">2022</span>
+                <h3 class="timeline__title"><span data-i18n="journey.2.title">Bachelor’s degree in Networking and Computer Services</span>
+                  <span class="timeline__org">Universidad Veracruzana</span></h3>
+                <p class="timeline__desc" data-i18n="journey.2.desc">Graduated with a thesis on supporting a software innovation lab through DevOps and network services.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">2022</span>
+                <h3 class="timeline__title"><span data-i18n="journey.3.title">Freelance developer</span>
+                  <span class="timeline__org">Museo del Agua Coatepec</span></h3>
+                <p class="timeline__desc" data-i18n="journey.3.desc">Built an appointment booking system with an admin portal and PDF tickets.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">2023</span>
+                <h3 class="timeline__title"><span data-i18n="journey.4.title">Joined Vauxoo as Fullstack Developer</span></h3>
+                <p class="timeline__desc" data-i18n="journey.4.desc">Started building custom Odoo modules and fixing real-world issues across customer environments.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">2023–2026</span>
+                <h3 class="timeline__title"><span data-i18n="journey.5.title">Growing into ERP</span></h3>
+                <p class="timeline__desc" data-i18n="journey.5.desc">Migrated repositories across Odoo versions, modernized the frontend to OWL, optimized performance, and integrated external systems through APIs.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">2026</span>
+                <h3 class="timeline__title"><span data-i18n="journey.6.title">Odoo 19 Functional Certification and Business Accounting Diploma</span></h3>
+                <p class="timeline__desc" data-i18n="journey.6.desc">Added the functional and financial side to my technical background.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="section split projects">
+      <div class="page-gutter">
+        <h2 class="split__title projects__heading" data-i18n="solutions.title">Some of the real projects I worked with</h2>
+        <div class="projects__grid">
+            <article class="project-card project-card--lg">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg></span>
+                <div>
+                  <span class="project-card__cat" data-i18n="solutions.charity.cat">Nonprofit · Canada</span>
+                  <h3 class="project-card__title" data-i18n="solutions.charity.title">Global donation &amp; charity platform</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.charity.body">Worked on a global donation and charity Canadian platform, building new features and campaign-management interfaces and resolving production issues. The project involved handling international payments and recurring subscriptions to fund campaigns worldwide, with donations going directly to orphaned children. Because the platform stores sensitive information about both donors and beneficiaries, I helped keep that data protected on both sides. I also contributed to automating global marketing campaigns and follow-ups tied to subscriptions and payments.</p>
+              <ul class="project-card__tags"><li data-i18n="solutions.charity.tag0">Payments</li><li data-i18n="solutions.charity.tag1">Subscriptions</li><li data-i18n="solutions.charity.tag2">Data protection</li><li data-i18n="solutions.charity.tag3">Marketing automation</li></ul>
+            </article>
+            <article class="project-card project-card--lg">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16l1.5 5a3 3 0 0 1-5.5 1.7A3 3 0 0 1 12 12a3 3 0 0 1-4-1.3A3 3 0 0 1 2.5 9L4 4zm1 9.5V20h14v-6.5a4.6 4.6 0 0 1-3 .3V18H8v-4.2a4.6 4.6 0 0 1-3-.3z"/></svg></span>
+                <div>
+                  <span class="project-card__cat" data-i18n="solutions.food.cat">Food distribution · Canada</span>
+                  <h3 class="project-card__title" data-i18n="solutions.food.title">Multi-company Odoo for a specialty food importer</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.food.body">Worked on a multi-company Odoo implementation for a leading Canadian importer of premium specialty foods that sells and distributes products coast to coast under multiple brands. The project required managing several companies, brands, and tax configurations within a single system. I developed custom modules to automate specific operational workflows, and redesigned the interface of the company’s multiple websites while improving their SEO and search visibility.</p>
+              <ul class="project-card__tags"><li data-i18n="solutions.food.tag0">Multi-company</li><li data-i18n="solutions.food.tag1">Taxes</li><li data-i18n="solutions.food.tag2">Website</li><li>SEO</li></ul>
+            </article>
+            <article class="project-card project-card--lg">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.7 6.3a6 6 0 0 1-7.9 7.3L6.4 21a2 2 0 0 1-2.9-2.9l7.4-7.4A6 6 0 0 1 18.2 2.8l-3.5 3.5.9 2.1 2.1.9 3.5-3.5c.2.2.4.3.5.5z"/></svg></span>
+                <div>
+                  <span class="project-card__cat" data-i18n="solutions.repair.cat">Automotive &amp; banking · Dominican Republic</span>
+                  <h3 class="project-card__title" data-i18n="solutions.repair.title">Auto-repair program connected to a bank</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.repair.body">Set up the project, repository, and Odoo instance for multiple client projects, including an auto-repair service program connected to a bank in the Dominican Republic. Built a custom module that sends requests to an external API to invoice and synchronize work, linking data between the Odoo instance and other systems. Developed custom reports and adjustments to document the services provided, in compliance with Dominican Republic fiscal localization requirements.</p>
+              <ul class="project-card__tags"><li data-i18n="solutions.repair.tag0">API integration</li><li data-i18n="solutions.repair.tag1">Fiscal localization</li><li data-i18n="solutions.repair.tag2">Reports</li></ul>
+            </article>
+            <article class="project-card project-card--lg">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 3h16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 10h16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1zm3-7.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm0 10a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></span>
+                <div>
+                  <span class="project-card__cat" data-i18n="solutions.hosting.cat">Hosting · Web</span>
+                  <h3 class="project-card__title" data-i18n="solutions.hosting.title">VPS &amp; web hosting reseller</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.hosting.body">Managed a VPS and web hosting reseller business using WHM and multiple cPanel accounts running WordPress sites for different clients, taking end-to-end responsibility for each instance. Implemented cybersecurity measures, and identified and recovered multiple WordPress instances compromised by malicious plugins. Designed a backup policy to store and protect data from all WordPress instances. Configured DNS records (SPF, DKIM, and DMARC) to prevent email spoofing. I also configured a Learning Management System (LMS) and created courses, lessons, and activities to teach English to children, and deployed a separate LMS on another platform to teach English to adults.</p>
+              <ul class="project-card__tags"><li>WHM / cPanel</li><li>WordPress</li><li data-i18n="solutions.hosting.tag2">Security</li><li data-i18n="solutions.hosting.tag3">Backups</li><li>DNS</li><li>LMS</li></ul>
+            </article>
+            <article class="project-card project-card--sm">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3l4 4H8v6H6V7H3l4-4zm10 18l-4-4h3v-6h2v6h3l-4 4z"/></svg></span>
+                <div>
+                  <h3 class="project-card__title" data-i18n="solutions.migrations.title">Odoo migrations</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.migrations.body">Led multiple Odoo migrations across client instances, upgrading custom modules and data between versions and deploying the new releases to Odoo.sh.</p>
+              <ul class="project-card__tags"><li>Odoo.sh</li></ul>
+            </article>
+            <article class="project-card project-card--sm">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1 3v4h10V5H7zm0 7v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v6h2v-6h-2zm-8 4v2h2v-2H7zm4 0v2h2v-2h-2z"/></svg></span>
+                <div>
+                  <h3 class="project-card__title" data-i18n="solutions.accounting.title">Custom accounting</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.accounting.body">Developed custom accounting modules to extend fiscal position logic and meet complex, client-specific requirements.</p>
+              <ul class="project-card__tags"><li data-i18n="solutions.accounting.tag0">Fiscal positions</li></ul>
+            </article>
+            <article class="project-card project-card--sm">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 2v5h6V2h2v5h1a1 1 0 0 1 1 1v3a6 6 0 0 1-5 5.9V22h-4v-5.1A6 6 0 0 1 5 11V8a1 1 0 0 1 1-1h1V2h2z"/></svg></span>
+                <div>
+                  <h3 class="project-card__title" data-i18n="solutions.integrations.title">External integrations</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.integrations.body">Developed custom Odoo modules integrating external services such as reCAPTCHA, Google Analytics, and Google Tag Manager.</p>
+              <ul class="project-card__tags"><li>reCAPTCHA</li><li>GA / GTM</li></ul>
+            </article>
+            <article class="project-card project-card--sm">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span>
+                <div>
+                  <h3 class="project-card__title" data-i18n="solutions.editor.title">WYSIWYG editor</h3>
+                </div>
+              </div>
+              <p class="project-card__body" data-i18n="solutions.editor.body">Extended the WYSIWYG editor with additional options and customizations, giving users more control over how they build and style their content.</p>
+              <ul class="project-card__tags"><li data-i18n="solutions.editor.tag0">Odoo website</li></ul>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO (private showcase invite) ===================== -->
+    <section id="portfolio" class="section">
+      <div class="page-gutter">
+        <div class="showcase">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-7">
+              <p class="contact__eyebrow" data-i18n="portfolio.eyebrow">Portfolio</p>
+              <h2 class="showcase__title" data-i18n="portfolio.title">Want to see my work <span class="text-orange">in action</span>?</h2>
+              <p class="showcase__text" data-i18n="portfolio.text">Most of the projects I've worked on are private client systems, so I don't share them publicly. Get in touch and I'll set up a private showcase of selected work, tailored to what you're looking for.</p>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <a href="#contact" class="btn btn-brand-outline" data-i18n="portfolio.cta">Request a showcase</a>
+                <span class="showcase__note" data-i18n="portfolio.note">Client details are always kept confidential.</span>
+              </div>
+            </div>
+
+            <div class="col-lg-5" aria-hidden="true">
+              <div class="showcase__window">
+                <div class="showcase__bar"><i></i><i></i><i></i></div>
+                <div class="showcase__screen">
+                  <div class="showcase__blur">
+                    <span class="sk sk--title"></span>
+                    <span class="sk"></span><span class="sk sk--short"></span>
+                    <div class="sk-grid"><span></span><span></span><span></span></div>
+                    <span class="sk"></span><span class="sk sk--short"></span>
+                  </div>
+                  <span class="showcase__lock">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3Zm0 9a2 2 0 0 0-1 3.73V19h2v-2.27A2 2 0 0 0 12 13Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="contact">
+      <svg class="contact__orbits" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="1240" cy="120" r="260"/>
+        <circle cx="1240" cy="120" r="380"/>
+        <circle cx="120" cy="680" r="220"/>
+      </svg>
+
+      <div class="page-gutter">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <p class="contact__eyebrow" data-i18n="contact.eyebrow">Contact me</p>
+            <h2 class="contact__title" data-i18n="contact.title">Let's build something <span class="text-orange">great</span> together</h2>
+            <p class="contact__text" data-i18n="contact.text">Whether you need an Odoo migration, a custom module or someone who understands the whole system, I'd love to hear about your project.</p>
+            <span class="contact__badge"><span class="contact__dot" aria-hidden="true"></span><span data-i18n="contact.badge">Open to new opportunities</span></span>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- TODO: replace the test values below with the real ones -->
+            <ul class="contact__list">
+              <li>
+                <a class="contact-card" href="mailto:your.email@example.com">
+                  <span class="contact-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-8 5.6-8-5.6ZM5.2 7 12 11.8 18.8 7H5.2Z"/></svg>
+                  </span>
+                  <span class="contact-card__body">
+                    <span class="contact-card__label" data-i18n="contact.email">Email</span>
+                    <span class="contact-card__value">irvingdeamera@hotmail.com</span>
+                  </span>
+                  <span class="contact-card__arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-card" href="tel:+520000000000">
+                  <span class="contact-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+                  </span>
+                  <span class="contact-card__body">
+                    <span class="contact-card__label" data-i18n="contact.phone">Phone</span>
+                    <span class="contact-card__value">+52 2282347921</span>
+                  </span>
+                  <span class="contact-card__arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-card" href="https://www.linkedin.com/in/irving-daniel-reyes-elizondo-7b2bab246/" target="_blank" rel="noopener">
+                  <span class="contact-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.9 1.28-1.9 2.6V21H9.5V9.75Z"/></svg>
+                  </span>
+                  <span class="contact-card__body">
+                    <span class="contact-card__label">LinkedIn</span>
+                    <span class="contact-card__value">linkedin.com/in/irving-daniel-reyes-elizondo</span>
+                  </span>
+                  <span class="contact-card__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      © <span id="year"></span> Irving Reyes
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 JS bundle (CDN). Self-host: assets/vendor/bootstrap/bootstrap.bundle.min.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
